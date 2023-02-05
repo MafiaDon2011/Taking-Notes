@@ -1,10 +1,15 @@
 import { NoteForm } from "./NoteForm";
+import { NoteData } from "./App";
 
-export function NewNote() {
+type NewNoteProps = {
+    onSumbit: (data: NoteData) => void
+}
+
+export function NewNote({onSumbit}: NewNoteProps) {
     return (
         <>
             <h1 className="mb-4">New Note</h1>
-            <NoteForm />
+            <NoteForm  onSubmit={onSumbit}/>
         </>
     )
 }
